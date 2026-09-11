@@ -1,398 +1,282 @@
-# 🍱 Smart Food Waste Predictor & Food Rescue Platform
+# 🍱 FoodRescue
 
-> **Turning surplus food into community impact — before it becomes waste. ♻️**
+**FoodRescue** is a web-based food donation and rescue platform designed to connect **food donors, volunteer couriers, and NGOs** so that surplus food can be collected and delivered instead of being wasted.
 
-A smart food-rescue platform designed to reduce food wastage by connecting **food donors, volunteer couriers, and NGOs** through a simple digital workflow.
-
-The platform allows surplus food to be listed by donors, picked up by volunteers, tracked during delivery, and verified by NGOs. It also provides a foundation for integrating **machine-learning-based food demand and waste prediction** to reduce over-preparation in the future.
+The platform provides an end-to-end workflow for creating food donations, claiming them through volunteers, tracking delivery progress, and confirming successful delivery through NGO verification.
 
 ---
 
-## 🌍 Problem
+## 🎯 Problem
 
-A large amount of edible food is wasted every day because of:
+Large amounts of surplus food from restaurants, events, and other sources can go to waste while people and communities still need food.
 
-* Over-preparation of meals
-* Unpredictable food demand
-* Lack of coordination between food donors and NGOs
-* Difficulty in transporting surplus food quickly
-* Limited visibility into the status of food donations
+FoodRescue aims to make the rescue process more organized by providing a digital platform where:
 
-At the same time, many communities and organizations face food shortages.
-
-### Our idea
-
-Instead of allowing surplus food to become waste:
-
-**Donor → Smart Matching → Volunteer → NGO → Community**
-
-The platform creates a simple digital bridge between surplus food and people who can use it.
+* Donors can list surplus food.
+* Volunteers can claim and transport donations.
+* NGOs can receive and verify delivered food.
+* Donation progress can be tracked throughout the rescue process.
 
 ---
 
-## 🚀 Key Features
-
-### 👨‍🍳 1. Food Donor
-
-Food donors such as restaurants, bakeries, and other food providers can:
-
-* Enter donor/restaurant details
-* Select the food category
-* Specify the quantity of meals
-* Add pickup location
-* Define a pickup time window
-* Add the food's best-before time
-* Provide additional food details
-* Upload a food photograph
-* Post the donation
-
-Once posted, the donation becomes available to the rescue workflow.
-
----
-
-### 🚴 2. Volunteer Courier
-
-Volunteers can view available food donations and accept rescue tasks.
-
-The platform includes:
-
-* Donor and food information
-* Quantity and expiry information
-* Pickup location
-* Pickup window
-* Smart matching interface
-* Food safety checklist
-* Volunteer assignment
-* Delivery status tracking
-
-Before accepting a pickup, the volunteer verifies:
-
-* ✅ Packaging is intact
-* ✅ Food is properly stored
-* ✅ No visible contamination
-* ✅ Food is within the pickup window
-
----
-
-### 🤖 3. Smart Matching
-
-The platform provides a smart-matching interface to connect available food donations with suitable rescue resources.
-
-The prototype displays:
-
-* 📍 Distance
-* 🏠 NGO availability
-* 🚴 Route status
-
-This creates the foundation for a future intelligent matching system based on real-time location, urgency, food quantity, volunteer availability, and NGO requirements.
-
----
-
-### 🏠 4. NGO Dashboard
-
-NGOs can monitor incoming food donations and delivery progress.
-
-The dashboard provides:
-
-* Meals rescued
-* Active volunteers
-* NGO partners
-* Donation information
-* Assigned volunteer
-* Pickup location
-* Pickup window
-* Current delivery status
-
----
-
-### 🚦 5. Delivery Tracking
-
-Each donation moves through a simple rescue lifecycle:
+## 💡 How FoodRescue Works
 
 ```text
-Listed
-   ↓
-Claimed
-   ↓
+Food Donor
+    ↓
+Creates Donation
+    ↓
+Volunteer Claims Donation
+    ↓
 Food Picked Up
-   ↓
-In Transit
-   ↓
-Delivered
-   ↓
-Verified
+    ↓
+Food In Transit
+    ↓
+Food Delivered
+    ↓
+NGO Verifies Delivery
+    ↓
+Donation Completed
 ```
-
-This makes the entire rescue process easier to monitor.
 
 ---
 
-### 🔐 6. Delivery Verification
+## ✨ Key Features
 
-After a volunteer marks the food as **Delivered**, the NGO can verify the delivery using a verification code.
+### 🍽️ Donor Dashboard
 
-After successful verification, the platform displays community impact metrics such as:
+* Create a food donation
+* Enter food category and quantity
+* Add pickup location and pickup window
+* Specify best-before information
+* View active donation details
+* Access donation history
+* Receive a unique verification code for delivery confirmation
 
-* Meals received
-* Food rescued
-* Reduction in potential landfill waste
+### 🚴 Volunteer Courier Dashboard
 
----
+* View available food donations
+* Claim a donation
+* Complete food pickup
+* Update delivery progress
+* Mark food as in transit
+* Mark food as delivered
 
-## 🧠 Machine Learning Component
+### 🏠 NGO Dashboard
 
-The project repository also includes a trained model file:
+* View incoming food donations
+* Track delivery status
+* Enter the donor's verification code
+* Confirm successful delivery
+* View completed donation history
 
-```text
-meal_demand_model.pkl
-```
+### 🔐 Delivery Verification
 
-The overall project is designed around the idea of using historical food-demand information to predict future requirements and reduce unnecessary food preparation.
+Each donation receives a unique verification code.
 
-The current prototype focuses primarily on the **food-rescue and redistribution workflow**, while the prediction component provides a foundation for future integration.
+The NGO uses this code to confirm that the food has been successfully received, helping provide a clear delivery confirmation process.
 
-### Future prediction workflow
+### 📊 Donation History
 
-```text
-Historical Food Data
-        ↓
-Data Preprocessing
-        ↓
-Feature Engineering
-        ↓
-Machine Learning Model
-        ↓
-Demand Prediction
-        ↓
-Recommended Food Quantity
-        ↓
-Reduced Over-Preparation
-        ↓
-Less Food Waste ♻️
-```
+The system stores donation information and delivery status so previous food rescue activities can be reviewed.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology           | Purpose                     |
-| -------------------- | --------------------------- |
-| Python               | Core programming language   |
-| Streamlit            | Interactive web application |
-| Pandas               | Data handling               |
-| Scikit-learn         | Machine learning            |
-| Joblib               | Model serialization/loading |
-| Python Session State | Prototype state management  |
+### Frontend
 
-The current dependency list is defined in `requirements.txt`.
+* React
+* Vite
+* JavaScript
+* HTML
+* CSS
+
+### Backend
+
+* Python
+* Flask
+* Flask-CORS
+
+### Database
+
+* SQLite
+
+### Development Tools
+
+* Git
+* GitHub
+* VS Code
+* PowerShell
 
 ---
 
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```text
-Smart-food-waste-predictor/
+FoodRescue/
+│
+├── backend/
+│   └── api.py
+│
+├── database/
+│   └── database.py
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── package.json
+│   ├── package-lock.json
+│   └── vite.config.js
 │
 ├── app.py
 ├── meal_demand_model.pkl
 ├── requirements.txt
-└── README.md
+├── README.md
+└── .gitignore
 ```
-
-### File Description
-
-**`app.py`**
-Main Streamlit application containing the donor, volunteer, and NGO workflows.
-
-**`meal_demand_model.pkl`**
-Saved machine-learning model intended for demand-prediction functionality.
-
-**`requirements.txt`**
-Contains the Python dependencies required to run the project.
 
 ---
 
-## ⚙️ Installation & Setup
+## 🚀 Running the Project Locally
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/mahak30-gif/Smart-food-waste-predictor.git
+git clone https://github.com/NandiniPandey20/FoodRescue.git
+cd FoodRescue
 ```
 
-### 2. Navigate into the project
+### 2. Set up the Python environment
+
+Create a virtual environment:
 
 ```bash
-cd Smart-food-waste-predictor
+python -m venv venv
 ```
 
-### 3. Install dependencies
+Activate it on Windows:
+
+```powershell
+venv\Scripts\activate
+```
+
+Install the required Python packages:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the Streamlit application
+### 3. Start the Flask backend
+
+From the project root:
 
 ```bash
-streamlit run app.py
+python -m backend.api
 ```
 
-### 5. Open the application
-
-Streamlit will provide a local URL, typically:
+The backend will run on:
 
 ```text
-http://localhost:8501
+http://localhost:5000
 ```
+
+### 4. Start the React frontend
+
+Open another terminal and move into the frontend folder:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL provided by Vite in your browser.
 
 ---
 
-## 🔄 How the Platform Works
+## 📸 Screenshots
 
-### Step 1 — Donation
+Screenshots of the FoodRescue application will be added here.
 
-A food donor enters information about surplus food and posts a donation.
+Suggested screenshots:
 
-### Step 2 — Availability
+* Home page
+* Donor dashboard
+* Donation creation form
+* Volunteer dashboard
+* NGO dashboard
+* Delivery verification
+* Donation history
 
-The donation becomes visible to the volunteer rescue workflow.
+---
 
-### Step 3 — Matching
+## 🔄 Donation Status Flow
 
-The platform presents a suitable NGO/volunteer match.
-
-### Step 4 — Safety Check
-
-The volunteer verifies the food's packaging, storage condition, contamination status, and pickup window.
-
-### Step 5 — Pickup
-
-The volunteer accepts the rescue task and collects the food.
-
-### Step 6 — Transportation
-
-The delivery status is updated to:
+FoodRescue uses a status-based workflow to track donations:
 
 ```text
-Claimed → Food Picked Up → In Transit
+Listed
+  ↓
+Claimed
+  ↓
+Food Picked Up
+  ↓
+In Transit
+  ↓
+Delivered
+  ↓
+Completed
 ```
 
-### Step 7 — NGO Delivery
-
-The food reaches the NGO and the volunteer marks the donation as delivered.
-
-### Step 8 — Verification
-
-The NGO confirms the delivery using a verification code.
-
-### Step 9 — Impact
-
-The platform displays the number of meals rescued and highlights the reduction of potential food waste.
+The final **Completed** status is reached after the NGO verifies the delivery using the donation's verification code.
 
 ---
 
-## 💡 Why This Matters
+## 🌱 Impact
 
-Food waste is not only an environmental problem — it is also a coordination problem.
+FoodRescue is designed to help reduce avoidable food waste by making surplus food easier to coordinate, collect, transport, and distribute.
 
-A restaurant may have perfectly edible surplus food, while an NGO nearby may need food. The challenge is connecting the two **quickly, safely, and efficiently**.
+The platform connects the three key participants in the process:
 
-This platform addresses that gap by combining:
+**Donor → Volunteer → NGO**
 
-**Prediction + Donation + Matching + Transportation + Verification**
-
-into one workflow.
-
----
-
-## 🔮 Future Scope
-
-The platform can be expanded into a complete intelligent food-rescue ecosystem.
-
-### 🤖 Advanced ML Prediction
-
-* Predict food demand before preparation
-* Predict expected surplus
-* Recommend optimal preparation quantities
-* Continuously improve predictions using historical data
-
-### 📍 Real-Time Smart Matching
-
-* GPS-based donor/NGO matching
-* Volunteer proximity detection
-* Dynamic route optimization
-* Priority matching for food close to expiry
-
-### 📱 Mobile Application
-
-Develop dedicated Android/iOS applications for:
-
-* Donors
-* Volunteers
-* NGOs
-
-### 🗺️ Live Tracking
-
-* Real-time volunteer location
-* Delivery tracking
-* Estimated arrival time
-* Route optimization
-
-### 🛡️ Food Safety
-
-Future versions can include:
-
-* Automated expiry alerts
-* Food-quality scoring
-* Image-based food inspection
-* Temperature monitoring through IoT sensors
-
-### 📊 Analytics Dashboard
-
-Organizations could monitor:
-
-* Total food rescued
-* Food waste avoided
-* Number of successful donations
-* Volunteer contribution
-* NGO demand
-* Monthly waste-reduction trends
-
-### 🌱 Sustainability Metrics
-
-The platform could estimate:
-
-* Food waste avoided
-* Meals rescued
-* Potential landfill waste avoided
-* Environmental impact
-* Carbon footprint reduction
-
----
-
-## 🎯 Vision
-
-Our goal is to move from:
-
-> **"Food is wasted because it wasn't needed."**
-
-to:
-
-> **"Food was predicted, rescued, and delivered where it was needed."**
-
-By combining data-driven prediction with real-world food redistribution, the platform aims to create a more **efficient, sustainable, and connected food ecosystem.** 🌱
+creating a structured digital workflow for food rescue.
 
 ---
 
 ## 👥 Team
 
-**Team:** Food Rescue / Smart Food Waste Predictor
+**FoodRescue** was developed as a collaborative project.
 
-Built as a prototype focused on using technology to reduce food waste and improve surplus-food redistribution.
+* **Nandini Pandey**
+* **Mehak**
 
 ---
 
-## 📜 License
+## 📌 Project Status
 
-This project is currently developed as a prototype/hackathon project.
+**Completed — Working Prototype**
+
+The current version includes the core donor, volunteer, NGO, backend API, database, delivery verification, and donation tracking workflows.
+
+---
+
+## 📄 License
+
+This project is intended for educational, hackathon, and portfolio purposes.

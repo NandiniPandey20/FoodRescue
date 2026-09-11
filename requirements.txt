@@ -1,3 +1,6 @@
+Flask
+flask-cors
+gunicorn
 streamlit
 pandas
 scikit-learn
